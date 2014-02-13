@@ -5,7 +5,7 @@
  */
 class Geo extends Dictionary implements IEmbeddedable, ISuggestable {
 	
-	use TEmbeddedable;
+    use TEmbeddedable;
 	
     /**
      * Страна
@@ -135,7 +135,7 @@ class Geo extends Dictionary implements IEmbeddedable, ISuggestable {
      */
     public function getSuggest($source, $term, $exclude = null, $limit = 15) {
     	
-    	$allowedFilters = arary('localities');
+    	$allowedFilters = array('localities');
     	if (in_array($source, $allowedFilters)) {
     		$this->$source();
     	}
